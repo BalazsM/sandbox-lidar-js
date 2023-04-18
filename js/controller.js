@@ -82,7 +82,7 @@ class GamepadController extends Controller {
 		
 		this.steering = gamepad.axes[2];
 		//this.acceleration = gamepad.axes[3];
-		this.acceleration = gamepad.buttons[7].value;
+		this.acceleration = gamepad.buttons[6].value * -1 + gamepad.buttons[7].value;
 	}
 }
 

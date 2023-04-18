@@ -1,11 +1,5 @@
-// TODO: copy into lidar simulation
 // TODO. fix sensor map clear glitch
-// TODO: rename simulation to world
-// TODO: property class (id, group, readonly, type[number, vector, boolean])
 // TODO: fix resize
-// TODO: display selected entity's velocity 
-// TODO: simulation speed slider
-// TODO: compass : https://codesandbox.io/s/idzgd
 
 let config = null;
 let controllerPool = null;
@@ -114,7 +108,9 @@ function draw() {
 	readInputs();
 
 	selectedEntity.direction.rotate(controllerPool.activeController.steering * (PI / 180.0 * config.steeringSensitivity));
-	selectedEntity.velocity = p5.Vector.fromAngle(selectedEntity.direction.heading(), controllerPool.activeController.acceleration * config.accelerationSensitivity);
+	selectedEntity.velocity = p5.Vector.fromAngle(
+		selectedEntity.direction.heading(), 
+		controllerPool.activeController.acceleration * config.accelerationSensitivity);
 
 	simulation.update();
 

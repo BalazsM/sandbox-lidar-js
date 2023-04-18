@@ -93,8 +93,9 @@ class Simulation {
 	}
 
 	updateEntityPhysics(entity) {
-		entity.velocity = p5.Vector.fromAngle(entity.direction.heading(), entity.velocity.mag() + entity.acceleration.mag());
-//		entity.velocity.limit(1.1); // TODO: max speed settings
+//		entity.velocity = p5.Vector.fromAngle(entity.direction.heading(), entity.velocity.mag() + entity.acceleration.mag());
+		entity.velocity.add(entity.acceleration);
+		entity.velocity.limit(10); // TODO: max speed settings
 
 		const velocity = p5.Vector.mult(entity.velocity, this.deltaT);
 		entity.position.add(velocity);
