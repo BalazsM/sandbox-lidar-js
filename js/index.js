@@ -77,7 +77,7 @@ function setup() {
 
 function windowResized() {
 	resizeCanvas(windowWidth, windowHeight);
-	view.resize();
+	view.resize(width, height);
 }
 
 function keyPressed() {
