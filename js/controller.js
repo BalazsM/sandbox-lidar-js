@@ -18,10 +18,14 @@ class KeyboardController extends Controller {
 	process() {
 		this.steering = 
 			keyIsDown(LEFT_ARROW) ? -1.0 : 0.0 + 
-			keyIsDown(RIGHT_ARROW) ? 1.0 : 0.0;
+			keyIsDown(65) ? -1.0 : 0.0 + 
+			keyIsDown(RIGHT_ARROW) ? 1.0 : 0.0 +
+			keyIsDown(68) ? 1.0 : 0.0;
 		this.acceleration = 
 			keyIsDown(UP_ARROW) ? 1.0 : 0.0 + 
-			keyIsDown(DOWN_ARROW) ? -1.0 : 0.0;
+			keyIsDown(87) ? 1.0 : 0.0 + 
+			keyIsDown(DOWN_ARROW) ? -1.0 : 0.0 +
+			keyIsDown(83) ? -1.0 : 0.0;
 	}
 }	
 
